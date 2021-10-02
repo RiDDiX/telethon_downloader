@@ -1,4 +1,4 @@
-FROM jsavargas/telethon_downloader
+FROM riddix/telethon_downloader
 
 
 
