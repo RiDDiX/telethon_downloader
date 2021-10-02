@@ -60,8 +60,8 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v1 
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: ${{ secrets.riddix }}
+          password: ${{ secrets.b161d4d9-4d06-4b40-9d04-1c829a9f2267 }}
       -
         name: Build and push
         id: docker_build
@@ -71,8 +71,8 @@ jobs:
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
           tags: |
-            jsavargas/telethon_downloader:latest
-            jsavargas/telethon_downloader:${{ steps.vars.outputs.tag }}
+            maxi.g.ha/telethon_downloader:latest
+            maxi.g.ha/telethon_downloader:${{ steps.vars.outputs.tag }}
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
