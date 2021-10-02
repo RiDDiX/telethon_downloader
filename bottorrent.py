@@ -141,7 +141,7 @@ def getDownloadPath(filename,CID):
 				final_path = DEFAULT_PATH[ext] #os.path.join(final_path,ext)
 				break
 
-	if filename.endswith('.torrent'): final_path = download_path_torrent
+	if filename.endswith('.torrent','.nzb'): final_path = download_path_torrent
 
 	path = os.path.join(final_path,filename)
 	os.makedirs(final_path, exist_ok = True)
@@ -290,7 +290,7 @@ async def worker(name):
 				if zipfile.is_zipfile(final_path):
 					with zipfile.ZipFile(final_path, 'r') as zipObj:
 						for fileName in zipObj.namelist():
-							if fileName.endswith('.torrent'):
+							if fileName.endswith('.torrent','.nzb'):
 								zipObj.extract(fileName, download_path_torrent)
 								logger.info("UNZIP TORRENTS [%s] to [%s]" % (fileName, download_path_torrent) )
 
