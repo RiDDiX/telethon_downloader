@@ -58,8 +58,8 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v1 
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: ${{ secrets.riddix }}
+          password: ${{ secrets.b161d4d9-4d06-4b40-9d04-1c829a9f2267 }}
       -
         name: Build and push
         id: docker_build
